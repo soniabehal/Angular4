@@ -1,0 +1,5 @@
+<h1>
+  {{title}}
+</h1>
+<!--<app-home [son]="son">Loading...</app-home>    custom property binding -->
+<app-home [son]="son" (onYell)="yell($event)">Loading...</app-home>

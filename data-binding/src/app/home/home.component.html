@@ -1,0 +1,15 @@
+<p>
+  {{homestring}}  <!--data binding    string interpolation-->
+</p>
+
+<input [value]="string"/>  <!--property binding-->
+
+<button (click)="function()">Click Me </button>   <!--event binding-->
+
+<!--<2 way data binding>>
+<input [(ngModel)]="son.name"/>
+<input [(ngModel)]="son.age"/>-->
+<p>  {{son.name}}</p>
+  {{son.age}}
+
+  <button (click)="fireYellEvent($event)">Hit me</button>

@@ -1,0 +1,15 @@
+h1{
+  background-color: teal;
+  color:white;
+  text-align: center;;
+  text-shadow: 2px 1px 3px red;
+  padding: 5px;
+  margin:0px;
+}
+h2{
+  background-color: #708090 ;
+  color:pink;
+  padding:10px;
+  text-decoration-color: blue;
+  text-align: right;
+}

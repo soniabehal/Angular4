@@ -1,0 +1,10 @@
+#LeftHolder {
+    width: 20%;
+    padding: 2%;
+    float: left;
+}
+#RightWorkPane {
+    width: 70%;
+    float: left;
+    padding: 2%;
+}

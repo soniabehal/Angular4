@@ -1,0 +1,49 @@
+
+#LeftHolder {
+    margin-left: 5%;
+    padding: 2%;
+    float: left;
+}
+    .floater {
+        background: #fff;
+        border-radius: 5px;
+        padding: 20px 0px;
+        box-shadow: 1px 2px 7px 1px rgba(0,0,0,.1);
+        overflow: hidden;
+        margin: 10px;
+    }
+
+
+.floaterHeader {
+    font-weight: 600;
+    border-bottom: 1px solid #999;
+    padding-bottom: 10px !important;
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding-left: 20px!important;
+}
+
+
+.paddHrzntl10{
+    padding: 0px 10px;
+}
+.LeftLinks {
+    font-size:1em;
+    text-decoration: none;
+    color: #555;
+    text-align: left!important;
+}
+
+.FloaterLinks li{
+    padding: 10px;
+}
+.FloaterLinks li:hover{
+    background: rgb(66, 165, 245);
+    color: #fff;
+    cursor: pointer;
+}
+    .FloaterLinks li:active {
+        background: #6592ee;
+    }
+
+    

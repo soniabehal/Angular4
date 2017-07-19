@@ -1,0 +1,55 @@
+.MostProminentText{
+    font-weight: 300;
+    font-size: 1.8em;
+    text-align: center;
+}
+  .floater {
+        background: #fff;
+        border-radius: 5px;
+        padding: 20px 0px;
+        box-shadow: 1px 2px 7px 1px rgba(0,0,0,.1);
+        overflow: hidden;
+        margin: 10px;
+    }
+.lightShadow {
+    box-shadow: 0px 2px 3px 1px rgba(0,0,0,.1);
+}
+
+#DataDisplay{
+    margin-top: 50px;
+    height: 300px;
+}
+.stats {
+    float: left;
+    margin-left: 7%;
+    text-align: center;
+    min-width: 200px;
+}
+#stats_Success {
+    background-color: #68D475;
+}
+
+#stats_Failed {
+    background-color: #B04941;
+}
+.stats span{
+    font-size: 2em;
+}
+#StatsPieChartsHolder{
+    margin-top: 50px;
+    padding-bottom: 0px;
+}
+.lefter{
+    float: left;
+}
+
+#stats_Success {
+    background-color: #68D475;
+}
+
+#stats_Failed {
+    background-color: #B04941;
+}
+.stats span{
+    font-size: 2em;
+}

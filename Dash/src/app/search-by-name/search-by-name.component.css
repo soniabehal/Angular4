@@ -1,0 +1,55 @@
+.floater {
+        background: #fff;
+        border-radius: 5px;
+        padding: 20px 0px;
+        box-shadow: 1px 2px 7px 1px rgba(0,0,0,.1);
+        overflow: hidden;
+        margin: 10px;
+    }
+.lightShadow {
+    box-shadow: 0px 2px 3px 1px rgba(0,0,0,.1);
+}
+
+.MostProminentText{
+    font-weight: 300;
+    font-size: 1.8em;
+    text-align: center;
+}
+.btn {
+    width: 150px;
+    height: 40px;
+    background: rgb(66, 165, 245);
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px 1px rgba(0,0,0,.1);
+    font-weight: 700;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 2px;
+
+}
+    .btn:hover {
+        cursor: pointer;
+        background: rgb(66, 165, 200);
+    }
+    
+    #searchbtn{
+    margin-left: 80px;
+}
+
+.holder{
+    margin-left: 30%;
+}
+
+.GranularityRadios{
+    max-width: 100px;
+    float:left;
+    margin: 0 10px;
+}
+.RadiosWrapper{
+    overflow: hidden;
+    max-width: 20%;
+    margin-left: 40%;
+}
+#tb_NameSearch{
+    margin-left: 23%;
+}

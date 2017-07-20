@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { CompleterService, CompleterData } from 'ng2-completer'
 
 @Component({
   selector: 'app-search-by-name',
   templateUrl: './search-by-name.component.html',
-  styleUrls: ['./search-by-name.component.css']
+  styleUrls: ['./search-by-name.component.css'],
+  encapsulation:ViewEncapsulation.Native
 })
 export class SearchByNameComponent implements OnInit {
 

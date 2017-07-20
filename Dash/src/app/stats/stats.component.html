@@ -8,8 +8,10 @@
                     Customers
                 </div>  
                 <div class="floater lightShadow stats" id="stats_total">
-                    <span id="TotalHits"></span><br />
-                  Hits
+                   
+                    <span id="TotalHits" *ngIf="hitsCount">{{hitsCount}}</span><br />
+
+                Total Hits
                 </div>
                 <div class="floater lightShadow stats" id="stats_Success">
                     <span id="SuccessfulHits"></span><br />

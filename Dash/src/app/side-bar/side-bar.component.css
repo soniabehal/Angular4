@@ -46,4 +46,6 @@
         background: #6592ee;
     }
 
-    
+    .QuickLinks{
+            min-width: 250px;
+    }

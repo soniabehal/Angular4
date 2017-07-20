@@ -1,14 +1,11 @@
     <div class="floater lightShadow" id="NameSearchFloater">
                     <h1 class="MostProminentText">
-                        search by name
+                        Search logs by name
                     </h1>
                 <!--       <input #tb_name (keyup)="autocomplete(tb_name.value)" type="text" class="tb wide" id="tb_NameSearch" placeholder="Start entering customer name..." autofocus /> -->
        <div class="holder">
               <ng2-completer placeholder="Start typing customer name..." [(ngModel)]="name" [datasource]="searchData" [minSearchLength]="0" inputClass="tb" inputId="searchTB"></ng2-completer> 
    
-                  <input id="searchbtn" type="button" value="SEARCH" class="btn lightShadow" onclick="SearchCustomer()" />
-       </div>
-                    <br />
                     <div class="RadiosWrapper">
                         <div class="GranularityRadios">
                             <input type="radio" value="Daily" class="Radios" name="Granularity" /> Daily
@@ -17,5 +14,7 @@
                             <input type="radio" value="Monthly" class="Radios"  name="Granularity" checked/> Monthly
                         </div>
                     </div>
+                  <input id="searchbtn" type="button" value="SEARCH" class="btn lightShadow" onclick="SearchCustomer()" />
+       </div>
                    
 </div>

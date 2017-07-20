@@ -8,3 +8,7 @@
     float: left;
     padding: 2%;
 }
+.mainContentHolder{
+        background: #9bfaf1;
+        overflow: hidden;
+}

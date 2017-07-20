@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { Ng2CompleterModule } from "ng2-completer"
+import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +23,8 @@ import { SearchByNameComponent } from './search-by-name/search-by-name.component
   imports: [
     BrowserModule,
     FormsModule,
-    Ng2CompleterModule
+    Ng2CompleterModule,
+    HttpModule
     
   ],
   providers: [],

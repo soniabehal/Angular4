@@ -27,6 +27,8 @@
     color: #fff;
     font-size: 1em;
     letter-spacing: 2px;
+    outline: none;
+
 }
 
 .btn:hover {
@@ -35,7 +37,8 @@
 }
 
 #searchbtn {
-    margin-left: 80px;
+    margin-left: 200px;
+    margin-top: 10px;
 }
 
 .holder {
@@ -51,15 +54,30 @@
 .RadiosWrapper {
     overflow: hidden;
     max-width: 20%;
-    margin-left: 40%;
+    margin-left:18%;
+    margin-top: 10px;
+
 }
 
 #tb_NameSearch {
     margin-left: 23%;
 }
 
-input[type="search"]{
-    background-color: #333;
-    width:50px;
-    height:200px;
+.completer-input{
+  width: 460px;
+  height: 40px;
+  padding-left: 5px;
+  font-size: 1em;
+}
+.completer-dropdown{
+    margin-top: 0px!important;
+    width: 450px!important;
+
+    
+}
+.completer-selected-row, .completer-list-item{
+    width: 98%!important;
+}
+.completer-holder{
+    margin-left: 50px!important;
 }

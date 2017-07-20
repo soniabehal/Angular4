@@ -11,7 +11,7 @@ header {
 .NavLinks{
     text-decoration: none;
     text-transform: uppercase;
-    margin: 0px 1em;
+    margin: 0px 1.5em;
     font-weight: 700;
     color: #444;
     letter-spacing: 1.5px;
@@ -24,7 +24,7 @@ nav {
     float: left;
     margin-left: 4%;
     max-width: 80%;
-    padding-top: 7px;
+    padding: 10px 0;
 }
 #LogoHolder {
     
@@ -34,4 +34,5 @@ nav {
     font-size: 1.5em;
     float:left;
     overflow: hidden;
+    margin-top: 5px;
 }

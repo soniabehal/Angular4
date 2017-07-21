@@ -21,28 +21,7 @@ export class StatsComponent implements OnInit {
   constructor(private http: Http) { }
 
   ngOnInit() {
-     this.getCustomersCount();
-  }
+    // this.getCustomersCount();
+  }     
 
-
-onTrigger(){
-  this.getCustomersCount();
-}
-
-  getCustomersCount(): Promise<any>{
-
-    return this.http.post(this.url_CustCount, '{"size": 0,"query":{"bool":{"must":[{"match":{"status":200}}]}}}', {headers: this.headerS})
-    .toPromise()
-
-    .then(response=> {
-      var data = response.json();
-      console.log(response.json(),data.hits.total);
-    this.hitsCount  = data.hits.total;
-    }).catch(this.errorHandle);
-
-  }
-errorHandle(error: any): Promise<any>{
-  console.log("error",error);
-  return Promise.reject(error.message|| error);
-}
 }

@@ -1,0 +1,23 @@
+<h2>Details for {{DetailsTODisplay.name}}</h2>
+   
+<input [(ngModel)]="DetailsTODisplay.name" />
+
+<div class="row">
+image:  <img class="img-responsive" style="max-height: 100px" src="{{DetailsTODisplay.image}}" alt="couldn't laod image for DetailsTODisplay.name" />
+</div>
+<div class="row">
+Description: {{DetailsTODisplay.description}}
+</div>
+<button (click)="showAddNewItemBox=!showAddNewItemBox">
+    <span *ngIf="!showAddNewItemBox">Show</span>
+    <span *ngIf="showAddNewItemBox">Hide</span> 
+    Add new Recepie Box
+</button>
+
+<div *ngIf="showAddNewItemBox">
+<h3> add new </h3>
+<input #NewName placeholder="name" />
+<input #NewDesc placeholder="Description" />
+<input #NewImg placeholder="image url" />
+<button (click)="addNewItem()">add </button>
+</div>

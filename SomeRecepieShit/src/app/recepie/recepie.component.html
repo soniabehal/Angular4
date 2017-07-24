@@ -3,13 +3,14 @@ recepies component
   <div class="col-md-7">
     
     <app-recepie-list 
-    (recepieSelectedFromList) = "recepieSelectedFromParent($event)"
-    [newItemToBeAdded]="newRecepieToBeAdded"
+    [newItemToBeAdded]="newRecepieToBeAdded" 
     ></app-recepie-list>
 
   </div>
   <div class="col-md-5">
-    <app-recepie-detail (newRecepieToBeAdded)="addNewRecepie($event)" *ngIf="selectedRecepieToDisplayDetails" 
-    [DetailsTODisplay]="selectedRecepieToDisplayDetails"></app-recepie-detail>
+    <app-recepie-detail (newRecepieToBeAdded)="addNewRecepie($event)" 
+    *ngIf="selectedRecepieToDisplayDetails"
+    [DetailsTODisplay]="selectedRecepieToDisplayDetails"
+    ></app-recepie-detail>
   </div>
 </div>

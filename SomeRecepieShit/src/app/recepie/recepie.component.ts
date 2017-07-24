@@ -2,33 +2,32 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Recepie } from './recepie.model'
 
 import { RecepieListComponent } from './recepie-list/recepie-list.component'
+import { RecepieService } from './recepie.service'
 
 @Component({
   selector: 'app-recepie',
   templateUrl: './recepie.component.html',
-  styleUrls: ['./recepie.component.css']
+  styleUrls: ['./recepie.component.css'],
+  providers: [RecepieService]
 })
-export class RecepieComponent {
+export class RecepieComponent implements OnInit{
 
- // @Output() addRecepies: EventEmitter<Recepie> = new EventEmitter<Recepie>();
-  
 selectedRecepieToDisplayDetails: Recepie;
 newRecepieToBeAdded: Recepie;
 
+constructor(private recepieServ: RecepieService){}
 
-recepieSelectedFromParent(recievedSelectedRecepie: Recepie){
-  this.selectedRecepieToDisplayDetails = recievedSelectedRecepie;
-  console.log("in parent");
+ngOnInit(){
+   this.recepieServ.recepieSelected.subscribe((rece:Recepie)=>{
+     this.selectedRecepieToDisplayDetails = rece;
+  });
+
+  
 }
 
 addNewRecepie(event){
 
-  this.newRecepieToBeAdded = new Recepie(event.name,event.description,event.image);
-  //this.newRecepieToBeAdded.description = event.description;
-  //this.newRecepieToBeAdded.image= event.image;
-  
-  //this.addRecepies.emit(event);
-  
+  this.newRecepieToBeAdded = new Recepie(event.name,event.description,event.image,event.ing);
 }
 
 }

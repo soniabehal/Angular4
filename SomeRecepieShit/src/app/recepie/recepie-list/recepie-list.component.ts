@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recepie } from '../recepie.model'
+import { RecepieService } from '../recepie.service'
+import { Item } from '../../shopping/item.model'
 
 @Component({
   selector: 'app-recepie-list',
@@ -12,20 +14,29 @@ export class RecepieListComponent implements OnInit {
 @Output() recepieSelectedFromList = new EventEmitter<Recepie> ();
 
 
-  recepies : Recepie[]=[
-    new Recepie('Reci1','Some description bro','http://amazingribs.com/images/recipes/blue_cheese_potato_salad.jpg'),
-    new Recepie('Reci2','Some description bro agian','http://amazingribs.com/images/recipes/blue_cheese_potato_salad.jpg'),
-    new Recepie('Reci3','OH yeah Some description bro','http://amazingribs.com/images/recipes/blue_cheese_potato_salad.jpg')
-  ];
+  constructor(private recepiesServ: RecepieService) { }
 
-  constructor() { }
+  recepies: Recepie[];
 
   ngOnInit() {
+  this.recepiesServ.recepieSelected.subscribe((rece:Recepie)=>console.log("caigjt"));
+    this.recepies = this.recepiesServ.getRecepies();
+
+    this.recepiesServ.newAddition.subscribe(
+      (newList: Recepie[])=>
+      {this.recepies = newList;}
+    );
   }
 
 ngOnChanges(){
   if(this.newItemToBeAdded)
-  this.recepies.push(new Recepie(this.newItemToBeAdded.name,this.newItemToBeAdded.description,this.newItemToBeAdded.image));
+    {
+     var newrec:Recepie = new Recepie(this.newItemToBeAdded.name,this.newItemToBeAdded.description,this.newItemToBeAdded.image,this.newItemToBeAdded.Ingredients);
+ // this.recepies.push(newrec);
+    
+  this.recepiesServ.addNewRecepie(newrec);
+  console.log(this.recepiesServ.getRecepies())
+}
 }
 
 recepieSelectedEmittedEventfromList(SelectedRecepie:Recepie):  void{

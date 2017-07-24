@@ -1,3 +1,3 @@
 shopping
-
-<app-shopping-list></app-shopping-list>
+<app-shopping-editt></app-shopping-editt>
+<app-shopping-list *ngFor="let x of allItems" [Ingredient]="x"></app-shopping-list>

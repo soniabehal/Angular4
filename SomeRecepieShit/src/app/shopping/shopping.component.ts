@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingService } from './shopping.service'
+import { Item } from './item.model'
 
 @Component({
   selector: 'app-shopping',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ShoppingServ: ShoppingService) { }
 
+  allItems: Item[]; 
   ngOnInit() {
+this.allItems  = this.ShoppingServ.getItems();
   }
 
 }

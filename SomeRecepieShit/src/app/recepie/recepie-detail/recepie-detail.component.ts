@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { Recepie } from '../recepie.model'
+import { Item } from '../../shopping/item.model'
+import { ShoppingService } from '../../shopping/shopping.service'
 
 @Component({
   selector: 'app-recepie-detail',
@@ -9,6 +11,7 @@ import { Recepie } from '../recepie.model'
 export class RecepieDetailComponent implements OnInit {
 
   @Output() newRecepieToBeAdded = new EventEmitter<Recepie>();
+  
   @ViewChild ('NewName') NewName : ElementRef;
   @ViewChild ('NewDesc') NewDesc : ElementRef;
   @ViewChild ('NewImg') NewImg : ElementRef;
@@ -17,21 +20,26 @@ export class RecepieDetailComponent implements OnInit {
 
   showAddNewItemBox: boolean = false;
 
-  constructor() { }
+  constructor(private ShoppingServ: ShoppingService) { }
 
   ngOnInit() {
-
+   // this.RecepieServ.recepieSelected.subscribe((rece:Recepie)=>console.log("caigjt"));
   }
-
+  
   addNewItem(){
     var newRec:Recepie = 
     new Recepie(
       this.NewName.nativeElement.value,
       this.NewDesc.nativeElement.value,
-      this.NewImg.nativeElement.value
+      this.NewImg.nativeElement.value,
+      [new Item('one',3),new Item('ws',2)]
     );
 
     this.newRecepieToBeAdded.emit(newRec);
 
+  }
+
+  exportIngToShoppingList(IngredientsOfSelectedRecepie:Item[]){
+this.ShoppingServ.addNewItem(IngredientsOfSelectedRecepie);
   }
 }

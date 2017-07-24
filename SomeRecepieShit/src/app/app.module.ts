@@ -13,7 +13,10 @@ import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.co
 import { ShoppingEdittComponent } from './shopping/shopping-editt/shopping-editt.component';
 import { RecepieDetailComponent } from './recepie/recepie-detail/recepie-detail.component';
 import { CustomHighlighter } from './CustomDirectives/custom-highlighter.directive';
-import { BetteronebroDirective } from './CustomDirectives/betteronebro.directive'
+import { BetteronebroDirective } from './CustomDirectives/betteronebro.directive';
+import { ClassAdderDirective } from './CustomDirectives/class-adder.directive'
+import { RecepieService } from './recepie/recepie.service'
+import { ShoppingService } from './shopping/shopping.service'
 
 @NgModule({
   declarations: [
@@ -27,12 +30,13 @@ import { BetteronebroDirective } from './CustomDirectives/betteronebro.directive
     ShoppingEdittComponent,
     RecepieDetailComponent,
     CustomHighlighter,
-    BetteronebroDirective
+    BetteronebroDirective,
+    ClassAdderDirective
   ],
   imports: [
     BrowserModule, FormsModule, CustomRouting
   ],
-  providers: [],
+  providers: [RecepieService,ShoppingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

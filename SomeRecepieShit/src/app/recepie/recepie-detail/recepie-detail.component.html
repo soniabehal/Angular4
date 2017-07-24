@@ -7,7 +7,11 @@ image:  <img class="img-responsive" style="max-height: 100px" src="{{DetailsTODi
 </div>
 <div class="row">
 Description: {{DetailsTODisplay.description}}
+<button (click)="exportIngToShoppingList(DetailsTODisplay.Ingredients)" >Add to shopping list</button>
+
 </div>
+<br>
+<br>
 <button (click)="showAddNewItemBox=!showAddNewItemBox">
     <span *ngIf="!showAddNewItemBox">Show</span>
     <span *ngIf="showAddNewItemBox">Hide</span> 

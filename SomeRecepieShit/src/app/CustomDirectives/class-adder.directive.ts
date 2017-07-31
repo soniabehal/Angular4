@@ -13,7 +13,7 @@ classToBeAdded: string;
 
 @HostListener('click') clicked(){
 if(this.class != this.classToBeAdded)
-  {this.class = this.classToBeAdded}
+  {this.class = "OHyeah"}
 else 
   {this.class=""}
 }

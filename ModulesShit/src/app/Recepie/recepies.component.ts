@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'
+import { PermissionsService } from '../permissions.service'
+
+
 
 @Component({
   selector: 'app-recepies',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecepiesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private PrmsnServ: PermissionsService, private router: Router, private ActiveURL: ActivatedRoute) {}
 
   ngOnInit() {
-  }
+   if(this.PrmsnServ.isAccessible("RecepiesComp",parseInt(localStorage.getItem("UserRoleLevel"))))
+     console.log("welcome to recepies component, authenticated user")
+    else
+     this.router.navigate(['IllegalAccess'])
 
+//TODO: Subscribe to Localstorage to detect change/forgery in permissionlevel
+  }
 }

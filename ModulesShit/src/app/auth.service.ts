@@ -6,21 +6,22 @@ export class Auth{
 
         const returnPromise = new Promise((resolve,reject)=> {
 
-            setTimeout(()=> {
-                resolve(this.isAllowed(UserRole,ComponentPermissionLevel));
+            setTimeout(() => {
+                resolve(this.isAllowed(UserRole, ComponentPermissionLevel));
             }, 2000);
-        }).catch();
+        })
 
 return returnPromise;
     }
 
-    private isAllowed(UserRole:string,ComponentPermissionLevel:number): boolean{//Role from cookie and permission level from component
+    private isAllowed(UserRole:string,ComponentPermissionLevel:number): boolean{
 
         let RoleObject: Role = this.isValidRoleName(UserRole)
             console.log(RoleObject)
+        console.log(ComponentPermissionLevel)
        if(RoleObject!=null)
         {
-            return RoleObject.PermissionLevel > ComponentPermissionLevel
+            return RoleObject.PermissionLevel >= ComponentPermissionLevel
         }
         else//fake role request 
             {

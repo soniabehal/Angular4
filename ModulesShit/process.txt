@@ -1,0 +1,14 @@
+For Dynamic component level permissions:
+Using directives is not possible as it is not applicable for routed components.
+
+checking permission in NgOnInit sounds good as it provides full control.
+
+
+Permissions level thing in angular is just for not showing element on the UI. aany restricted element can be viewed by changing the value in the cookie/localstorage manually..
+
+For blocked content the server must not send data.
+
+Use a centralized service which component hits before getting loaded to see if it is to be shown or not.
+
+the service must fetch component permissions from the database and thus can be modified dynamically
+

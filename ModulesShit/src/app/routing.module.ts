@@ -12,7 +12,7 @@ const rootRoutes: Routes=[
         path: 'rece',
         component: RecepiesComponent,
         canActivate: [AuthProvider],
-        data: {'PermissionsLevel':'13'}
+        data: {'PermissionsLevel':'1'}
     }
 ]
 

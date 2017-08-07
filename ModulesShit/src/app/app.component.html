@@ -1,2 +1,8 @@
-happ component bro
+<h1>app component bro</h1>
+<input #PL id="Permissions" type="Text" [value]="Permiss" placeholder="Permission level" /><br>
+<button type="button" (click)="LoginClick()" *ngIf="!isLoggedIn" > Log in</button><br>
+<button type="button" #logout (click)="LogoutClick()"  *ngIf="isLoggedIn"> Log out</button><br><br>
+<a routerLink="/rece" routerLinkActive="y" >Recepies</a>
+<a routerLink="/list" routerLinkActive="y" >Recepies List</a>
+<a routerLink="/shop" routerLinkActive="y" >Shopping</a>
 <router-outlet></router-outlet>

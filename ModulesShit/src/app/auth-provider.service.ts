@@ -11,20 +11,15 @@ export class AuthProvider implements CanActivate{
 
     canActivate(actRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean
     {
-     //   let toAllow:boolean;
-       return this.authService.checkAuthorization('Manager',actRoute.data["PermissionsLevel"])
+        return this.authService.checkAuthorization('Manager',actRoute.data["PermissionsLevel"])//user role and component permission level
         .then(
             (allowed:boolean)=> 
             {
-   //             toAllow=allowed;
-                if(!allowed)
-                    this.router.navigate(['/notAllowedBro']);
-                return allowed
+                return allowed;
             }
         )
-        .catch(()=>{return false;});
-
-       // console.log('came till here')
-        //return toAllow;
+        .catch(()=>{
+            return false;
+        });
     }
 }

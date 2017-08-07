@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { AuthProvider } from './auth-provider.service'
 import { Auth } from './auth.service'
 
+import { PermissionsService } from './permissions.service'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +20,7 @@ import { Auth } from './auth.service'
   imports: [
     BrowserModule, RecepiesModule, RoutingModule, ShoppingModule, ErrorsModule
   ],
-  providers: [AuthProvider, Auth],
+  providers: [AuthProvider, Auth, PermissionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

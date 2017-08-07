@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { WebService } from '../WebService'
 
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/toPromise';//enables conversion from observable to promise
 
 @Component({
   selector: 'app-stats',
@@ -10,7 +11,8 @@ import 'rxjs/add/operator/toPromise';
 })
 export class StatsComponent implements OnInit {
 
-  private url_CustCount = 'http://nfsrv-elk-prod-1100.zreem.com:9200/_search';
+  private url_CustCount = this.webservice.WebServiceURL;
+
   private headerS  = new Headers({'content-type':'application/json'});
 
   //Stats here
@@ -18,31 +20,44 @@ export class StatsComponent implements OnInit {
 
   obj = '{"size": 0,"query":{"bool":{"must":[{"match":{"status":200}}]}}}';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+  private webservice: WebService) { }
 
   ngOnInit() {
-     this.getCustomersCount();
+console.log(this.hitsCount);
+
+console.log(this.hitsCount);
+   
   }
 
+/*********
+ * LEFTERS:
+ * make the functions and return only integer values of NULL
+ * 
+ */
 
-onTrigger(){
-  this.getCustomersCount();
-}
-
-  getCustomersCount(): Promise<any>{
-
-    return this.http.post(this.url_CustCount, '{"size": 0,"query":{"bool":{"must":[{"match":{"status":200}}]}}}', {headers: this.headerS})
+  getHitsCount() {
+    /*
+      returns the total hits count
+      returns -1 on error in making HTTP request
+    */
+ 
+    var responsePromise =  this.http.post(this.url_CustCount, '{"size": 0,"query":{"bool":{"must":[{"match":{"status":200}}]}}}', {headers: this.headerS})
     .toPromise()
-
     .then(response=> {
-      var data = response.json();
-      console.log(response.json(),data.hits.total);
-    this.hitsCount  = data.hits.total;
-    }).catch(this.errorHandle);
-
+    return response.json().hits.total;
+    }
+  )
+  .catch(error=>
+    {
+      this.LogError(error);
+      return -1;
+    }
+    );
+  
   }
-errorHandle(error: any): Promise<any>{
-  console.log("error",error);
-  return Promise.reject(error.message|| error);
+
+LogError(error: any): void{
+  console.log("Some error occured.",error);
 }
 }

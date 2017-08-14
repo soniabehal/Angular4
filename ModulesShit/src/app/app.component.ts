@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
     }
   else 
       console.log("no local variable found")
-    
   }
 
 isLoggedIn:boolean  = false;

@@ -1,0 +1,15 @@
+app component
+ngClass:
+<div [ngClass]="['one','two']">
+    div bro
+    <p>this is a para </p>
+</div>
+
+ngPlural:
+<div [ngPlural]="'three'">
+    <ng-template ngPluralCase="=1">one</ng-template>
+    <ng-template ngPluralCase="=2">two</ng-template>
+    <ng-template ngPluralCase="=three">three</ng-template>
+</div>
+
+ngSwitch bro:

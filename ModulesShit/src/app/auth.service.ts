@@ -23,7 +23,7 @@ return returnPromise;
         {
             return RoleObject.PermissionLevel >= ComponentPermissionLevel
         }
-        else//fake role request 
+        else//fake role request
             {
                 console.log("unauthorized access caught.");
     return false;

@@ -1,0 +1,6 @@
+recepie list component<p>
+  <app-recepie-item *ngFor="let recepie of recepies" [recItem]="recepie" 
+  (recepieSelectedEmittedEventfromItem)="recepieSelectedEmittedEventfromList(recepie)" >  
+
+  </app-recepie-item>
+</p>

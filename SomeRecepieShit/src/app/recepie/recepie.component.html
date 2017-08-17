@@ -1,0 +1,16 @@
+recepies component
+<div class="row">
+  <div class="col-md-7">
+    
+    <app-recepie-list 
+    [newItemToBeAdded]="newRecepieToBeAdded" 
+    ></app-recepie-list>
+
+  </div>
+  <div class="col-md-5">
+    <app-recepie-detail (newRecepieToBeAdded)="addNewRecepie($event)" 
+    *ngIf="selectedRecepieToDisplayDetails"
+    [DetailsTODisplay]="selectedRecepieToDisplayDetails"
+    ></app-recepie-detail>
+  </div>
+</div>

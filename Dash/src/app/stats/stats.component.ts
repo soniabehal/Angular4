@@ -24,6 +24,7 @@ export class StatsComponent implements OnInit {
   private webservice: WebService) { }
 
   ngOnInit() {
+<<<<<<< HEAD
 console.log(this.hitsCount);
 
 console.log(this.hitsCount);
@@ -61,3 +62,9 @@ LogError(error: any): void{
   console.log("Some error occured.",error);
 }
 }
+=======
+    // this.getCustomersCount();
+  }     
+
+}
+>>>>>>> c7c6dceb8c87c3faf9975c56ef268e470e167256
